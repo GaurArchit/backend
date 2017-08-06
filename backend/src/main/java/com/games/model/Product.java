@@ -2,12 +2,14 @@ package com.games.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 
-public class PRODUCT{
-	@Id
+public class Product{
+	@Id @GeneratedValue(strategy = GenerationType.AUTO )
 private int id;
 private String productName;
 private double price;

@@ -8,15 +8,16 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.games.model.PRODUCT;
+import com.games.model.Product;
 
 
-
+@ComponentScan("com.games")
 @Configuration
 @EnableTransactionManagement
 public class DBConfiguration {
@@ -40,7 +41,7 @@ public class DBConfiguration {
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
-		Class classes[]=new Class[]{PRODUCT.class};
+		Class classes[]=new Class[]{Product.class};
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean
