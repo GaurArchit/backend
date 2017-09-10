@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 
 public class Order{
 	@Id @GeneratedValue(strategy = GenerationType.AUTO )
+ 
+	
 private int oid;
 
 	public int getOid() {
@@ -21,5 +23,5 @@ private int oid;
 	public void setOid(int oid) {
 		this.oid = oid;
 	}
-
+	
 }

@@ -17,15 +17,24 @@ public class Kart{
 	@Id @GeneratedValue
 	private int kid;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="user_id")
+	@OneToOne(mappedBy="kart")
+	@JoinColumn(name="uid")
 	private User user;
-	public void setUser(User user) {
+	
+	
+	public User getUser()
+	{
+		return user;
+		
+	}
+	
+   
+
+public void setUser(User user) {
 		this.user = user;
 	}
-	public User getUser(){
-		return user;
-	}
+
+
 
 public int getKid() {
 	return kid;
