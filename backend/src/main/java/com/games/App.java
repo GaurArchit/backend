@@ -1,20 +1,30 @@
-package com.games.backend;
+package com.games;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
-import com.game.dao.ProductDaoImp;
-import com.games.configuration.DBConfiguration;
+import com.games.dao.ProductDaoImp;
 import com.games.model.Product;
 import com.games.services.ProductServices;
-import com.games.services.ProductServicesImpl;
+import com.games.configuration.AppConfig;
+
+
+import java.math.BigDecimal;
+import java.util.List;
+
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
 
 public class App 
 {
     public static void main( String[] args ) throws Exception
     {
         
-        ApplicationContext context=new AnnotationConfigApplicationContext(DBConfiguration.class,ProductDaoImp.class,ProductServicesImpl.class);
+    	 AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    	 
         System.out.println( "Hello World!" ); 
 		
         
@@ -47,6 +57,6 @@ public class App
         Product product1 = productService.findProductById(2);
        product1.setQuantity(900);
        productService.updateProduct(product1);
-        
+        context.close();
     }
 }

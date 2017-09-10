@@ -1,4 +1,4 @@
-package com.game.dao;
+package com.games.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

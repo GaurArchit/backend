@@ -1,10 +1,7 @@
-package com.game.dao;
-
-
-
+package com.games.dao;
 
 import java.util.List;
- 
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
@@ -15,7 +12,7 @@ import com.games.model.Product;
 
  
 @Repository("productDao")
-public class ProductDaoImp extends AbstractDao implements ProductDao{
+public  class ProductDaoImp extends AbstractDao implements ProductDao{
  
     public void saveProduct(Product product) {
         persist(product);
@@ -39,13 +36,9 @@ public class ProductDaoImp extends AbstractDao implements ProductDao{
         criteria.add(Restrictions.eq("id",id));
         return (Product) criteria.uniqueResult();
     }
-     
-    public void updateProduct(Product product){
-        getSession().update(product);
-    }
 
-	
-
-	     
+	public void updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		getSession().update(product);
+	}
 }
-

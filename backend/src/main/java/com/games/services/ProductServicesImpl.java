@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.game.dao.ProductDao;
+import com.games.dao.ProductDao;
 import com.games.model.Product;
  
 
@@ -16,7 +16,7 @@ import com.games.model.Product;
 public class ProductServicesImpl implements ProductServices{
  
     @Autowired
-    private ProductDao dao;
+    private ProductDao dao; 
      
     public void saveProduct(Product product) {
         dao.saveProduct(product);
