@@ -23,7 +23,20 @@ public class Appk {
 	user.setMobile(9987);
 	
 
-	Kart kart = new  Kart();
+	 AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+	 System.out.println( "Hello World!" ); 
+			
+	        
+	        
+	 KartServices kartService=(KartServices)context.getBean("kartServicesImpl");
+	  Kart kart=new Kart();
+
+	
+	
+	
+	
+
 
 	kart.setKid(2);
 
@@ -45,7 +58,7 @@ public class Appk {
 
 	sessionFactory.close();
 	
-
+context.close();
 	}
 }
 	
