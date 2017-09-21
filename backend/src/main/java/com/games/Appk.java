@@ -21,19 +21,21 @@ public class Appk {
 
 	User user = new User();
 	user.setMobile(9987);
-	
+	user.setUserName("Archit");
 
 	 AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-	 System.out.println( "Hello World!" ); 
-			
-	        
-	        
+	 
 	 KartServices kartService=(KartServices)context.getBean("kartServicesImpl");
 	  Kart kart=new Kart();
 
 	
 	
+	 System.out.println( "Hello World!" ); 
+			
+	        
+	        
+	 
 	
 	
 
@@ -44,21 +46,9 @@ public class Appk {
 	kart.setUser(user);
 
 
-	SessionFactory  sessionFactory= new AnnotationConfiguration().configure().buildSessionFactory();
-	
-	Session session = sessionFactory.openSession();
-	session.beginTransaction();
+	kartService.saveKart(kart);
 
 
-	session.save(kart);
-
-
-	session.getTransaction().commit();
-	session.close();
-
-	sessionFactory.close();
-	
-context.close();
 	}
 }
 	

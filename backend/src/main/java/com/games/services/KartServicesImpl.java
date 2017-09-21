@@ -35,11 +35,12 @@ public  class KartServicesImpl implements KartServices{
 	
 	public Kart findKartById(int kid) {
 		// TODO Auto-generated method stub
-		return null;
+		 return kartdao.findKartById(kid);
+		
 	}
 
 	public void updateKart(Kart kart) {
 		// TODO Auto-generated method stub
-		
+		 kartdao.updateKart(kart);
 	}
 }

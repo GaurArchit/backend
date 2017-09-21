@@ -19,7 +19,7 @@ public class KartDaoImp extends AbstractDao implements KartDao{
     }
  
     @SuppressWarnings("unchecked")
-    public List<Kart> findAllProduct() {
+    public List<Kart> findAllKart() {
         Criteria criteria = getSession().createCriteria(Kart.class);
         return (List<Kart>) criteria.list();
     }
@@ -41,11 +41,7 @@ public class KartDaoImp extends AbstractDao implements KartDao{
         getSession().update(kart);
     }
 
-	public List<Kart> findAllKart() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }
 
 	     

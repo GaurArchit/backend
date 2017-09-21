@@ -14,10 +14,10 @@ import org.hibernate.annotations.Parameter;
 @Entity
 
 public class Kart{
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.AUTO )
 	private int kid;
 	
-	@OneToOne(mappedBy="kart")
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="uid")
 	private User user;
 	

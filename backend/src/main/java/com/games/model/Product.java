@@ -1,15 +1,31 @@
 package com.games.model;
 
 
+import java.util.HashMap;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.MapKey;
 
 @Entity
 
-public class Product{
+
+
+
+public class Product {
+
+	
+
+
+
 	@Id @GeneratedValue(strategy = GenerationType.AUTO )
+
 private int id;
 private String productName;
 private double price;
@@ -18,6 +34,8 @@ private String description;
 public int getId() {
 	return id;
 }
+
+
 public void setId(int id) {
 	this.id = id;
 }
