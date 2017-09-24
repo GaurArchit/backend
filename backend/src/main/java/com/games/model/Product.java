@@ -2,6 +2,7 @@ package com.games.model;
 
 
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,22 +15,19 @@ import javax.persistence.ManyToMany;
 import javax.persistence.MapKey;
 
 @Entity
-
-
-
-
 public class Product {
 
 	
 
 
 
+
 	@Id @GeneratedValue(strategy = GenerationType.AUTO )
 
 private int id;
-private String productName;
+private String productname;
 private double price;
-private int quantity;
+private Integer quantity;
 private String description;
 public int getId() {
 	return id;
@@ -39,12 +37,7 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
-public String getProductName() {
-	return productName;
-}
-public void setProductName(String productName) {
-	this.productName = productName;
-}
+
 public double getPrice() {
 	return price;
 }
@@ -60,6 +53,16 @@ public void setQuantity(int quantity) {
 public String getDescription() {
 	return description;
 }
+public String getProductname() {
+	return productname;
+}
+
+
+public void setProductname(String productname) {
+	this.productname = productname;
+}
+
+
 public void setDescription(String description) {
 	this.description = description;
 }

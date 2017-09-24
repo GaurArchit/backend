@@ -26,8 +26,7 @@ public class Appo {
     	 AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
     	 
-    	 OrderServices orderService=(OrderServices)context.getBean("orderServicesImpl");
-    	  
+    	
 
 
 
@@ -39,41 +38,25 @@ public class Appo {
     	 
     	 KartServices kartServices=(KartServices)context.getBean("kartServicesImpl");
   
-    	     
-    Kart	  kart= kartServices.findKartById(1);
+    	 Kart kar =new Kart();
+    	 kar.setUserDetails("Archit");
+    	 
+    	 kartServices.saveKart(kar);
     	 
     	 
-    	 
+    	 OrderServices orderService=(OrderServices)context.getBean("orderServicesImpl");
+   
+    	Order ord = new Order();
     	
-    Order order = new Order();
-    order.setOrderdetails("Games FifaS");
-    	 order.setOrderdetails("Games fifa");
-    	 
-    	 
-    	 
-    order.setKart(kart);
-    order.setOid(1);
-    	 
+    	ord.setOrderdetails("Games");
+            ord.setKart(kar);
+    	 orderService.saveOrder(ord);
     	        
  
     		//this is the line where it shows error it changes my setUser into static
     		
 
-    		SessionFactory  sessionFactory= new AnnotationConfiguration().configure().buildSessionFactory();
-    		
-    		Session session = sessionFactory.openSession();
-    		session.beginTransaction();
-
-session.persist(kart);
-    		
-
-
-    		session.getTransaction().commit();
-    		session.close();
-
-    		sessionFactory.close();
-    		
-    	context.close();
+    	
     		}
     	
     		

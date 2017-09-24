@@ -31,5 +31,6 @@ public class Appu {
    user.setUserName("Archit");
    user.setMobile(9999988);
    userService.saveUser(user);
+   context.close();
 }
 }

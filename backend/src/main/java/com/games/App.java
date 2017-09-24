@@ -32,7 +32,7 @@ public class App
         ProductServices productService=(ProductServices)context.getBean("productServicesImpl");
         Product product=new Product();
        
-        product.setProductName("pencsddl");
+        product.setProductname("pencsddl");
         
         product.setPrice(2000);
         product.setQuantity(202);
@@ -41,22 +41,7 @@ public class App
         productService.saveProduct(product);
         
         
-        
-        product=new Product();
   
-        
-        product.setProductName("pen");
-        
-        product.setPrice(20);
-        product.setQuantity(2000);
-        product.setDescription("hb");
-        
-        productService.saveProduct(product);
-        
-        
-        Product product1 = productService.findProductById(2);
-       product1.setQuantity(900);
-       productService.updateProduct(product1);
         context.close();
     }
 }
