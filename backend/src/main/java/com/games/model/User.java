@@ -8,27 +8,47 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import com.games.model.Order;
+import com.games.model.Order1;
 @Entity
 
 public class User{
 	@Id @GeneratedValue(strategy = GenerationType.AUTO )
 private int uid;
-private String userName;
+private String password;
+private String role="role_user";
+private int active=1 ;
+private String username;
 private double mobile;
 private String address;
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public String getRole() {
+	return role;
+}
+public void setRole(String role) {
+	this.role = role;
+}
+public void setUsername(String username) {
+	this.username = username;
+}
+public int getActive() {
+	return active;
+}
+public void setActive(int active) {
+	this.active = active;
+}
+
 public int getUid() {
 	return uid;
 }
 public void setUid(int uid) {
 	this.uid = uid;
 }
-public String getUserName() {
-	return userName;
-}
-public void setUserName(String userName) {
-	this.userName = userName;
-}
+
 public double getMobile() {
 	return mobile;
 }

@@ -2,20 +2,20 @@ package com.games.services;
 
 import java.util.List;
 
-import com.games.model.Order;
+import com.games.model.Order1;
 public interface OrderServices {
 
-	void saveOrder(Order order);
+	void saveOrder(Order1 order);
 	
 	
 	
-	List<Order> findAllOrder();
+	List<Order1> findAllOrder();
 	 
     void deleteOrderById(int oid);
  
-    Order findOrderById(int oid);
+    Order1 findOrderById(int oid);
  
-    void updateOrder(Order order);
+    void updateOrder(Order1 order);
 }
 	
 

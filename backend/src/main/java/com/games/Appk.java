@@ -21,7 +21,7 @@ public class Appk {
 
 	User user = new User();
 	user.setMobile(9987);
-	user.setUserName("Archit");
+	user.setUsername("Archit");
 
 	 AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 

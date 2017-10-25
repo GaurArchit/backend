@@ -9,7 +9,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 
 import com.games.configuration.AppConfig;
 import com.games.model.Kart;
-import com.games.model.Order;
+import com.games.model.Order1;
 import com.games.model.User;
 import com.games.services.KartServices;
 import com.games.services.OrderServices;
@@ -41,23 +41,26 @@ public class Appo {
     	 Kart kar =new Kart();
     	 kar.setUserDetails("Archit");
     	 
-    	 kartServices.saveKart(kar);
-    	 
     	 
     	 OrderServices orderService=(OrderServices)context.getBean("orderServicesImpl");
    
-    	Order ord = new Order();
-    	
+    	Order1 ord = new Order1();
+    	Order1 ord2= new Order1();
     	ord.setOrderdetails("Games");
-            ord.setKart(kar);
-    	 orderService.saveOrder(ord);
-    	        
+           ord2.setOrderdetails("Fifa");
+ ord.setKart(kar);
  
+ ord2.setKart(kar);
+ 
+orderService.saveOrder(ord);
+orderService.saveOrder(ord2);
+
     		//this is the line where it shows error it changes my setUser into static
     		
 
     	
-    		}
-    	
-    		
+
+    }
 }
+    		
+

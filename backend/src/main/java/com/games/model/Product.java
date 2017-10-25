@@ -27,7 +27,7 @@ public class Product {
 private int id;
 private String productname;
 private double price;
-private Integer quantity;
+private int quantity;
 private String description;
 public int getId() {
 	return id;

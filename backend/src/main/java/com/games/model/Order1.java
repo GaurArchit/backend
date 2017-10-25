@@ -20,9 +20,18 @@ import org.hibernate.annotations.Cascade;
 
 @Entity
 
-public class Order implements Serializable  {
+public class Order1  {
 	 
- 
+	@Id @GeneratedValue(strategy = GenerationType.AUTO )
+	private int oid;
+
+		public int getOid() {
+			return oid;
+		}
+
+		public void setOid(int oid) {
+			this.oid = oid;
+		}
 	
 	private String orderdetails ;
 	public String getOrderdetails() {
@@ -33,20 +42,11 @@ public class Order implements Serializable  {
 			this.orderdetails = orderdetails;
 		}
 
-		@Id @GeneratedValue(strategy = GenerationType.AUTO )
-	private int oid;
-
-		public int getOid() {
-			return oid;
-		}
-
-		public void setOid(int oid) {
-			this.oid = oid;
-		}
+	
 		
 
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="kid")
 	private Kart kart;
 

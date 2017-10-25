@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.games.dao.OrderDao;
-import com.games.model.Order;
+import com.games.model.Order1;
  
 
  
@@ -18,11 +18,11 @@ public class OrderServicesImpl implements OrderServices{
     @Autowired
     private OrderDao odao; 
      
-    public void saveorder(Order order) {
+    public void saveorder(Order1 order) {
         odao.saveOrder(order);
     }
  
-    public List<Order> findAllOrder() {
+    public List<Order1> findAllOrder() {
         return odao.findAllOrder();
     }
  
@@ -30,17 +30,18 @@ public class OrderServicesImpl implements OrderServices{
         odao.deleteOrderById(oid);
     }
  
-    public Order findOrderById(int oid) {
+    public Order1 findOrderById(int oid) {
         return odao.findOrderById(oid);
     }
  
-    public void updateOrder(Order order){
+    public void updateOrder(Order1 order){
         odao.updateOrder(order);
     }
 
-	public void saveOrder(Order order) {
+	public void saveOrder(Order1 order) {
 		// TODO Auto-generated method stub
 		odao.saveOrder(order);
 	}
 
+	
 }

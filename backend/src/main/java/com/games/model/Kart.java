@@ -62,8 +62,4 @@ public void setKid(int kid) {
 	this.kid = kid;
 }
 
-
-
-
-
 }

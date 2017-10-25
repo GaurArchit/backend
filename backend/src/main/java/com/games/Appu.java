@@ -28,8 +28,10 @@ public class Appu {
    User   user =new User();
   
    user.setAddress("skldjoifqwrufqelfnqeougt");
-   user.setUserName("Archit");
+   user.setUsername("admin");
+   user.setRole("role_admin");
    user.setMobile(9999988);
+   user.setPassword("123");
    userService.saveUser(user);
    context.close();
 }

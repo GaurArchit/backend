@@ -7,19 +7,19 @@ import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
-import com.games.model.Order;
+import com.games.model.Order1;
 
 @Repository("orderdao")
 public class OrderDaoImp extends AbstractDao implements OrderDao{
  
-    public void saveOrder(Order order) {
+    public void saveOrder(Order1 order) {
         persist(order);
     }
  
     @SuppressWarnings("unchecked")
-    public List<Order> findAllOrder() {
-        Criteria criteria = getSession().createCriteria(Order.class);
-        return (List<Order>) criteria.list();
+    public List<Order1> findAllOrder() {
+        Criteria criteria = getSession().createCriteria(Order1.class);
+        return (List<Order1>) criteria.list();
     }
  
     public void deleteOrderById(int oid) {
@@ -29,13 +29,13 @@ public class OrderDaoImp extends AbstractDao implements OrderDao{
     }
  
      
-    public Order findOrderById(int oid){
-        Criteria criteria = getSession().createCriteria(Order.class);
+    public Order1 findOrderById(int oid){
+        Criteria criteria = getSession().createCriteria(Order1.class);
         criteria.add(Restrictions.eq("id",oid));
-        return (Order) criteria.uniqueResult();
+        return (Order1) criteria.uniqueResult();
     }
      
-    public void updateOrder(Order order){
+    public void updateOrder(Order1 order){
         getSession().update(order);
     }
 
